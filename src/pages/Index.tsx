@@ -34,7 +34,7 @@ const Index = () => {
         style={{
           backgroundImage: "url('/lovable-uploads/4bd6ab60-5e02-4314-adcb-146db2fc78ea.png')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: { xs: "left", md: "center" },
           backgroundRepeat: "no-repeat",
           filter: "brightness(0.5)",
           height: "100vh",
