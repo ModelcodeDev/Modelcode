@@ -13,7 +13,9 @@ const Index = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          filter: "brightness(0.7)"
+          filter: "brightness(0.5)",
+          height: "100vh",
+          width: "100vw"
         }}
       />
 
@@ -26,9 +28,9 @@ const Index = () => {
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
-              Revolutionizing
+              Bring Your Products
               <br />
-              Fashion Photography
+              to Life
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Transform your fashion brand with AI-powered photography that delivers
