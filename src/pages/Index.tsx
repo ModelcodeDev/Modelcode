@@ -1,31 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Camera, Heart, Star } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
+import SavingsCalculator from "@/components/SavingsCalculator";
 
 const Index = () => {
-  const [productCount, setProductCount] = useState<number>(0);
-  const [photosPerProduct, setPhotosPerProduct] = useState<number>(0);
-  
-  // Calculate savings
-  const calculateSavings = () => {
-    const totalPhotos = productCount * photosPerProduct;
-    const traditionalCost = totalPhotos * 100; // Assuming $100 per traditional photo
-    const aiCost = totalPhotos * 20; // Assuming $20 per AI photo
-    const moneySaved = traditionalCost - aiCost;
-    const timeSaved = totalPhotos * 2; // Assuming 2 hours saved per photo
-    
-    return {
-      traditionalCost,
-      aiCost,
-      moneySaved,
-      timeSaved
-    };
-  };
-
-  const savings = calculateSavings();
-
   return (
     <div className="min-h-screen relative">
       {/* Background Image */}
@@ -34,7 +12,7 @@ const Index = () => {
         style={{
           backgroundImage: "url('/lovable-uploads/4bd6ab60-5e02-4314-adcb-146db2fc78ea.png')",
           backgroundSize: "cover",
-          backgroundPosition: { xs: "left", md: "center" },
+          backgroundPosition: "left center",
           backgroundRepeat: "no-repeat",
           filter: "brightness(0.5)",
           height: "100vh",
@@ -66,63 +44,7 @@ const Index = () => {
         </section>
 
         {/* Calculator Section */}
-        <section className="py-20 bg-black/80">
-          <div className="container max-w-4xl mx-auto px-4">
-            <h2 className="section-title text-center mb-12 text-white">Calculate Your Savings</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="space-y-4">
-                <label className="block text-white text-sm font-medium">
-                  How many products do you have?
-                </label>
-                <Input
-                  type="number"
-                  min="0"
-                  value={productCount}
-                  onChange={(e) => setProductCount(Number(e.target.value))}
-                  className="w-full"
-                  placeholder="Enter number of products"
-                />
-              </div>
-              
-              <div className="space-y-4">
-                <label className="block text-white text-sm font-medium">
-                  How many photos per product?
-                </label>
-                <Input
-                  type="number"
-                  min="0"
-                  value={photosPerProduct}
-                  onChange={(e) => setPhotosPerProduct(Number(e.target.value))}
-                  className="w-full"
-                  placeholder="Enter photos per product"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <p className="text-gray-300 mb-2">Traditional Cost</p>
-                <p className="text-3xl font-bold text-white">${savings.traditionalCost}</p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <p className="text-gray-300 mb-2">AI-Powered Cost</p>
-                <p className="text-3xl font-bold text-white">${savings.aiCost}</p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <p className="text-gray-300 mb-2">Money Saved</p>
-                <p className="text-3xl font-bold text-green-400">${savings.moneySaved}</p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <p className="text-gray-300 mb-2">Time Saved</p>
-                <p className="text-3xl font-bold text-blue-400">{savings.timeSaved} hours</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SavingsCalculator />
 
         {/* Process Section */}
         <section className="py-20 bg-black/80">
