@@ -9,11 +9,11 @@ const Index = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/lovable-uploads/17417411-bd67-4de9-b67b-dd2fb7a136fe.png')",
+          backgroundImage: "url('/lovable-uploads/db3ca072-8ea1-457a-96bd-5454dbfe1cab.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          filter: "brightness(0.7)"
+          filter: "brightness(0.5)"
         }}
       />
 

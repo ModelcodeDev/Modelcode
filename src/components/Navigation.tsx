@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +12,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-white font-semibold text-xl">
+            <Link to="/" className="text-white font-semibold text-lg">
               Modelcode
             </Link>
           </div>
@@ -21,16 +20,16 @@ const Navigation = () => {
           {/* Desktop menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link to="/" className="text-white hover:text-gray-300 px-3 py-2">
+              <Link to="/" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
                 Home
               </Link>
-              <Link to="/about" className="text-white hover:text-gray-300 px-3 py-2">
+              <Link to="/about" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
                 About
               </Link>
-              <Link to="/portfolio" className="text-white hover:text-gray-300 px-3 py-2">
+              <Link to="/portfolio" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
                 Portfolio
               </Link>
-              <Link to="/contact" className="text-white hover:text-gray-300 px-3 py-2">
+              <Link to="/contact" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
                 Contact
               </Link>
             </div>
@@ -41,6 +40,7 @@ const Navigation = () => {
             <button
               onClick={toggleMenu}
               className="text-white hover:text-gray-300 focus:outline-none"
+              aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -49,32 +49,32 @@ const Navigation = () => {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="md:hidden absolute left-0 right-0 bg-black/90 backdrop-blur-sm">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
                 to="/"
-                className="text-white hover:text-gray-300 block px-3 py-2"
+                className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
                 onClick={toggleMenu}
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className="text-white hover:text-gray-300 block px-3 py-2"
+                className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
                 onClick={toggleMenu}
               >
                 About
               </Link>
               <Link
                 to="/portfolio"
-                className="text-white hover:text-gray-300 block px-3 py-2"
+                className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
                 onClick={toggleMenu}
               >
                 Portfolio
               </Link>
               <Link
                 to="/contact"
-                className="text-white hover:text-gray-300 block px-3 py-2"
+                className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
                 onClick={toggleMenu}
               >
                 Contact
