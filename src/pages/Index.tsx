@@ -2,8 +2,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PhotoshootCalculator from "@/components/PhotoshootCalculator";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [currentWord, setCurrentWord] = useState(0);
+  const words = ["Products", "Outfits", "Looks", "Clothes"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToWhySection = () => {
     const whySection = document.querySelector('#why-modelcode');
     whySection?.scrollIntoView({ behavior: 'smooth' });
@@ -32,7 +43,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image - Desktop */}
+      {/* Background Images */}
       <div 
         className="absolute inset-0 z-0 hidden md:block"
         style={{
@@ -45,7 +56,6 @@ const Index = () => {
           width: "100vw"
         }}
       />
-      {/* Background Image - Mobile */}
       <div 
         className="absolute inset-0 z-0 block md:hidden"
         style={{
@@ -59,13 +69,19 @@ const Index = () => {
         }}
       />
 
-      {/* Content */}
       <div className="relative z-10">
-        {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
-              Bring Your Products
+              Bring Your{' '}
+              <span className="relative inline-block min-w-[160px]">
+                <span 
+                  className="absolute left-0 text-blue-400 animate-fade-in"
+                  key={words[currentWord]}
+                >
+                  {words[currentWord]}
+                </span>
+              </span>
               <br />
               to Life
             </h1>

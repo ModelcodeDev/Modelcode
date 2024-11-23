@@ -11,8 +11,8 @@ interface PhotoshootCalculatorProps {
 }
 
 const PhotoshootCalculator = ({ className }: PhotoshootCalculatorProps) => {
-  const [photoCount, setPhotoCount] = useState<number>(5);
-  const [outfitCount, setOutfitCount] = useState<number>(2);
+  const [photoCount, setPhotoCount] = useState<number>(1);
+  const [outfitCount, setOutfitCount] = useState<number>(1);
   const [locationCount, setLocationCount] = useState<number>(1);
   const [modelCount, setModelCount] = useState<number>(1);
 
