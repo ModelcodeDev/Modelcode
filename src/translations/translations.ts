@@ -17,7 +17,7 @@ export const translations = {
     timeTook: "Time: It took long, right? 😈",
     timeHyperfast: "Time: hyperfast ⚡",
     saveOnPhotoshoot: "Save on Your Photoshoot",
-    featuredWork: "Featured Work",
+    checkOurSessions: "Check our sessions",
     viewPortfolio: "View Full Portfolio"
   },
   pl: {
@@ -38,7 +38,7 @@ export const translations = {
     timeTook: "Czas: Trwało długo, prawda? 😈",
     timeHyperfast: "Czas: błyskawicznie ⚡",
     saveOnPhotoshoot: "Oszczędź na sesji zdjęciowej",
-    featuredWork: "Wyróżnione prace",
+    checkOurSessions: "Zobacz nasze sesje",
     viewPortfolio: "Zobacz pełne portfolio"
   }
 };
