@@ -74,11 +74,11 @@ const Index = () => {
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
               Bring Your{' '}
-              <span className="relative inline-block">
+              <span className="relative inline-block w-[180px]">
                 {words.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 text-blue-400 ${
+                    className={`absolute left-1/2 -translate-x-1/2 text-blue-400 min-w-[180px] ${
                       index === currentWord ? 'animate-word-change' : 'opacity-0'
                     }`}
                   >
@@ -116,7 +116,7 @@ const Index = () => {
                 <img
                   src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
                   alt="Modelcode process visualization"
-                  className="w-full mx-auto rounded-lg"
+                  className="w-4/5 mx-auto rounded-lg"
                 />
               </div>
               
