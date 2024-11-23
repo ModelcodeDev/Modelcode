@@ -27,7 +27,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image - Desktop and Mobile */}
+      {/* Background Image - Desktop */}
       <div 
         className="absolute inset-0 z-0 hidden md:block"
         style={{
@@ -40,6 +40,7 @@ const Index = () => {
           width: "100vw"
         }}
       />
+      {/* Background Image - Mobile */}
       <div 
         className="absolute inset-0 z-0 block md:hidden"
         style={{
