@@ -13,7 +13,6 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
   const [lastCost, setLastCost] = useState<number>(5000); // Default to $5k
   
   const modelcodeCost = lastCost * 0.45; // 45% of traditional cost
-  const savingsPercentage = 55; // Fixed at 55%
 
   return (
     <section id={id} className={`py-20 ${className}`}>
@@ -24,6 +23,9 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
           </h2>
           
           <div className="mb-16 space-y-4">
+            <p className="text-center text-lg font-semibold">
+              ${lastCost.toLocaleString()}
+            </p>
             <div className="px-2">
               <Slider
                 value={[lastCost]}
@@ -63,10 +65,6 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
                 </p>
               </div>
             </div>
-
-            <p className="text-xl md:text-2xl font-medium text-center bg-black text-white py-4 px-6 rounded-lg inline-block mx-auto">
-              Save {savingsPercentage}% on your photoshoot
-            </p>
           </div>
 
           <div className="mt-12 text-center">
