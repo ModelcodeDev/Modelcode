@@ -44,8 +44,9 @@ export const calculateResults = (
   const validatedLocations = Math.max(1, Math.round(locationCount));
   const validatedModels = Math.max(1, Math.round(modelCount));
 
-  // Calculate total photos
+  // Calculate total photos needed
   const totalPhotos = validatedPhotos * validatedOutfits;
+  console.log('Total photos calculation:', { photosPerOutfit: validatedPhotos, outfitCount: validatedOutfits, totalPhotos });
 
   // Traditional cost calculation
   const extraPhotos = Math.max(0, totalPhotos - BASE_PACKAGE_PHOTOS);
