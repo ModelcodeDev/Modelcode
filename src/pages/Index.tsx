@@ -31,7 +31,7 @@ const Index = () => {
       <div 
         className="absolute inset-0 z-0 hidden md:block"
         style={{
-          backgroundImage: "url('/Home background - desktop.jpg')",
+          backgroundImage: "url('/lovable-uploads/1368a7a7-6eeb-41bd-9e03-6cf54f44b5bb.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
