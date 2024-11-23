@@ -131,9 +131,9 @@ const Index = () => {
         <section id="why-modelcode" className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center mb-16">{t.whyModelcode}</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-center">
-              <div className="order-1 lg:order-1">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+              <div className="order-1 lg:order-1 lg:col-span-1">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl max-w-[240px] mx-auto">
                   <img
                     src="/lovable-uploads/5b433cd0-8253-4b69-9da2-c69304209e49.png"
                     alt="Fashion photography with horse"
@@ -143,7 +143,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="order-2 lg:order-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="order-2 lg:order-2 lg:col-span-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {benefits.map((benefit, index) => (
                   <div 
                     key={index} 
