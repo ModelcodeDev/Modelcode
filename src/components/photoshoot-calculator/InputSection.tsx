@@ -47,14 +47,14 @@ const InputSection = ({
 
       <div className="space-y-4">
         <label className="block text-sm font-medium">
-          Number of Final Photos Per Outfit
+          Photos Per Outfit
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger className="ml-2">
                 <Info className="h-4 w-4 inline" />
               </TooltipTrigger>
               <TooltipContent>
-                <p>How many unique final photos you need for each outfit</p>
+                <p>5 photos included per outfit. Additional photos available at extra cost.</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -63,12 +63,18 @@ const InputSection = ({
           <Slider
             value={[photoCount]}
             onValueChange={(values) => setPhotoCount(values[0])}
+            min={5}
             max={10}
             step={1}
             className="w-full"
           />
         </div>
-        <span className="block text-right">{photoCount} photos per outfit</span>
+        <div className="text-right space-y-1">
+          <span className="block">{photoCount} photos per outfit</span>
+          <span className="block text-sm text-gray-500">
+            {photoCount > 5 ? `(${photoCount - 5} additional photos)` : '(5 included)'}
+          </span>
+        </div>
       </div>
     </div>
   );
