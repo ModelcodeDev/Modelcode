@@ -6,12 +6,13 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="flex items-center space-x-2">
-      <span className="text-sm">EN</span>
+      <span className="text-sm text-white">EN</span>
       <Switch
         checked={language === 'pl'}
         onCheckedChange={(checked) => setLanguage(checked ? 'pl' : 'en')}
+        className="data-[state=checked]:bg-white/20"
       />
-      <span className="text-sm">PL</span>
+      <span className="text-sm text-white">PL</span>
     </div>
   );
 };

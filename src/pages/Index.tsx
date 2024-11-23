@@ -53,8 +53,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Language Switcher */}
-      <div className="fixed top-4 right-4 z-50">
+      {/* Language Switcher - Desktop only */}
+      <div className="fixed top-4 right-4 z-50 md:hidden">
         <LanguageSwitcher />
       </div>
 
@@ -85,6 +85,7 @@ const Index = () => {
       />
 
       <div className="relative z-10">
+        {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
@@ -127,25 +128,31 @@ const Index = () => {
         </section>
 
         {/* Why Modelcode? Section */}
-        <section id="why-modelcode" className="py-20 bg-white">
+        <section id="why-modelcode" className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center mb-12">{t.whyModelcode}</h2>
-            <div className="flex flex-col md:flex-row gap-12">
-              <div className="md:w-1/3">
-                <img
-                  src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
-                  alt="Modelcode process visualization"
-                  className="w-4/5 mx-auto rounded-lg"
-                />
-              </div>
-              
-              <div className="md:w-2/3 space-y-6">
+            <h2 className="section-title text-center mb-16">{t.whyModelcode}</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="order-2 lg:order-1 space-y-8">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                  <div 
+                    key={index} 
+                    className="fade-in bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    <h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                   </div>
                 ))}
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="/lovable-uploads/5b433cd0-8253-4b69-9da2-c69304209e49.png"
+                    alt="Fashion photography with horse"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
               </div>
             </div>
           </div>

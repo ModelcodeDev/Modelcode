@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,8 @@ const Navigation = () => {
           </div>
           
           {/* Desktop menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            <div className="flex items-baseline space-x-4">
               <Link to="/" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
                 Home
               </Link>
@@ -30,6 +31,7 @@ const Navigation = () => {
                 Contact
               </Link>
             </div>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -69,6 +71,9 @@ const Navigation = () => {
               >
                 Contact
               </Link>
+              <div className="px-3 py-2">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         )}
