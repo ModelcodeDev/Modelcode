@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SavingsCalculator from "@/components/SavingsCalculator";
+import PhotoshootCalculator from "@/components/PhotoshootCalculator";
 
 const Index = () => {
   const portfolioPreviewImages = [
@@ -101,8 +102,11 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Calculator Section */}
+        {/* Simple Calculator Section */}
         <SavingsCalculator />
+
+        {/* Advanced Calculator Section */}
+        <PhotoshootCalculator className="bg-gray-50" />
         
         {/* CTA Section */}
         <div className="bg-black/80 py-12 text-center">
