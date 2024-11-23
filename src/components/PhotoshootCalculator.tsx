@@ -42,7 +42,7 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
           <div className="space-y-12">
             <h3 className="text-xl md:text-2xl font-semibold text-center">Comparison</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:[&>*:first-child]:order-none [&>*:first-child]:order-last">
               <div className="bg-white p-8 rounded-xl shadow-lg space-y-4">
                 <h4 className="font-medium text-lg text-center">Traditional</h4>
                 <p className="text-3xl font-bold text-red-500 text-center">
