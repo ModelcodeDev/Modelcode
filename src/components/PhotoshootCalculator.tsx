@@ -17,6 +17,12 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
   const t = translations[language];
   
   const modelcodeCost = lastCost * 0.45;
+  const currencySymbol = language === 'pl' ? 'zł' : '$';
+  const formatCurrency = (amount: number) => {
+    return language === 'pl' 
+      ? `${amount.toLocaleString()} ${currencySymbol}`
+      : `${currencySymbol}${amount.toLocaleString()}`;
+  };
 
   return (
     <section id={id} className={`py-20 ${className}`}>
@@ -28,7 +34,7 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
           
           <div className="mb-16 space-y-4">
             <p className="text-center text-lg font-semibold">
-              ${lastCost.toLocaleString()}
+              {formatCurrency(lastCost)}
             </p>
             <div className="px-2">
               <Slider
@@ -40,8 +46,8 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
               />
             </div>
             <div className="flex justify-between text-sm text-gray-600">
-              <span>$0</span>
-              <span>$100,000</span>
+              <span>{formatCurrency(0)}</span>
+              <span>{formatCurrency(100000)}</span>
             </div>
           </div>
 
@@ -52,7 +58,7 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
               <div className="bg-white p-8 rounded-xl shadow-lg space-y-4">
                 <h4 className="font-medium text-lg text-center">{t.traditional}</h4>
                 <p className="text-3xl font-bold text-red-500 text-center">
-                  ${lastCost.toLocaleString()}
+                  {formatCurrency(lastCost)}
                 </p>
                 <p className="text-gray-600 text-center italic">
                   {t.timeTook}
@@ -62,7 +68,7 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
               <div className="bg-white p-8 rounded-xl shadow-lg space-y-4">
                 <h4 className="font-medium text-lg text-center">{t.modelcode}</h4>
                 <p className="text-3xl font-bold text-green-500 text-center">
-                  ${modelcodeCost.toLocaleString()}
+                  {formatCurrency(modelcodeCost)}
                 </p>
                 <p className="text-blue-600 font-semibold text-center">
                   {t.timeHyperfast}

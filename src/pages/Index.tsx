@@ -127,7 +127,25 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Featured Work Section (renamed from Portfolio Preview) */}
+        {/* Why Modelcode? Section - Without Photo */}
+        <section id="why-modelcode" className="py-24 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center mb-16">{t.whyModelcode}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <div 
+                  key={index} 
+                  className="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
+                  <h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Work Section */}
         <section className="py-20 bg-white">
           <div className="container">
             <h2 className="section-title text-center mb-16">{t.checkOurSessions}</h2>
@@ -151,24 +169,6 @@ const Index = () => {
                   {t.viewPortfolio} <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Modelcode? Section - Without Photo */}
-        <section id="why-modelcode" className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="section-title text-center mb-16">{t.whyModelcode}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
-                <div 
-                  key={index} 
-                  className="fade-in bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
-                >
-                  <h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
