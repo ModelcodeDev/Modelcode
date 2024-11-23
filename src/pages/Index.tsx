@@ -73,21 +73,21 @@ const Index = () => {
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
-              Bring Your{' '}
-              <span className="relative inline-block">
+              <span className="md:inline block">Bring Your</span>{' '}
+              <span className="relative inline-flex justify-center md:w-[180px]">
                 {words.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 text-blue-400 ${
-                      index === currentWord ? 'animate-word-change' : 'opacity-0'
+                    className={`absolute md:static block ${
+                      index === currentWord ? 'animate-word-change text-blue-400' : 'opacity-0'
                     }`}
                   >
                     {word}
                   </span>
                 ))}
-                <span className="invisible">{words[0]}</span>
+                <span className="invisible md:inline-block">{words[0]}</span>
               </span>
-              {' '}to Life
+              {' '}<span className="md:inline block">to Life</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Transform your fashion brand with AI-powered photography that delivers
@@ -116,7 +116,7 @@ const Index = () => {
                 <img
                   src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
                   alt="Modelcode process visualization"
-                  className="w-full mx-auto rounded-lg"
+                  className="w-4/5 mx-auto rounded-lg"
                 />
               </div>
               
