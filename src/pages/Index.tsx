@@ -78,7 +78,7 @@ const Index = () => {
                 {words.map((word, index) => (
                   <span
                     key={word}
-                    className={`absolute left-0 text-blue-400 ${
+                    className={`absolute left-1/2 -translate-x-1/2 text-blue-400 whitespace-nowrap ${
                       index === currentWord ? 'animate-word-change' : 'opacity-0'
                     }`}
                   >
@@ -116,7 +116,7 @@ const Index = () => {
                 <img
                   src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
                   alt="Modelcode process visualization"
-                  className="w-full mx-auto rounded-lg"
+                  className="w-4/5 mx-auto rounded-lg"
                 />
               </div>
               
