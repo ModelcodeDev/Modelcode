@@ -2,9 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import InputSection from "./photoshoot-calculator/InputSection";
-import ResultsSection from "./photoshoot-calculator/ResultsSection";
-import { calculateResults } from "./photoshoot-calculator/calculations";
+import { Slider } from "./ui/slider";
 
 interface PhotoshootCalculatorProps {
   className?: string;
@@ -12,59 +10,67 @@ interface PhotoshootCalculatorProps {
 }
 
 const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
-  const [photoCount, setPhotoCount] = useState<number>(1);
-  const [outfitCount, setOutfitCount] = useState<number>(1);
-
-  const results = calculateResults(photoCount, outfitCount);
-  const savings = results.traditional.costs.total - results.ai.costs.total;
-
-  const scrollToResults = () => {
-    const resultsElement = document.querySelector('#calculator-results');
-    if (resultsElement) {
-      resultsElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [lastCost, setLastCost] = useState<number>(5000); // Default to $5k
+  
+  const modelcodeCost = lastCost * 0.45; // 45% of traditional cost
+  const savings = lastCost - modelcodeCost;
+  const savingsPercentage = 55; // Fixed at 55%
 
   return (
     <section id={id} className={`py-20 ${className}`}>
       <div className="container max-w-6xl mx-auto px-4">
-        <h2 className="section-title text-center mb-4">Calculate Your Savings</h2>
-        
-        {/* Mobile Summary */}
-        <div className="md:hidden text-center mb-8">
-          <p className="text-lg font-medium text-green-600">
-            Save up to ${savings.toLocaleString()}
-          </p>
-          <button 
-            onClick={scrollToResults}
-            className="text-sm text-blue-600 underline mt-1"
-          >
-            Learn more
-          </button>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <InputSection
-            outfitCount={outfitCount}
-            setOutfitCount={setOutfitCount}
-            photoCount={photoCount}
-            setPhotoCount={setPhotoCount}
-          />
-          <div id="calculator-results">
-            <ResultsSection
-              traditional={results.traditional}
-              ai={results.ai}
-              photoCount={photoCount * outfitCount}
-            />
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-12">
+            Your last normal photoshoot cost
+          </h2>
+          
+          <div className="mb-16 space-y-4">
+            <div className="px-2">
+              <Slider
+                value={[lastCost]}
+                onValueChange={(values) => setLastCost(values[0])}
+                max={100000}
+                step={100}
+                className="w-full"
+              />
+            </div>
+            <div className="flex justify-between text-sm text-gray-600">
+              <span>$0</span>
+              <span>$100,000</span>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-12 text-center">
-          <Link to="/contact">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800">
-              Save on Your Photoshoot <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
+          <div className="space-y-8">
+            <h3 className="text-xl font-semibold">Your costs</h3>
+            
+            <div className="grid grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <h4 className="font-medium">Traditional</h4>
+                <p className="text-2xl font-bold text-red-500">
+                  ${lastCost.toLocaleString()}
+                </p>
+              </div>
+              
+              <div className="space-y-2">
+                <h4 className="font-medium">Modelcode</h4>
+                <p className="text-2xl font-bold text-green-500">
+                  ${modelcodeCost.toLocaleString()}
+                </p>
+              </div>
+            </div>
+
+            <p className="text-xl font-medium text-center">
+              Save {savingsPercentage}% on your photoshoot
+            </p>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link to="/contact">
+              <Button size="lg" className="bg-black text-white hover:bg-gray-800">
+                Save on Your Photoshoot <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
