@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
 import InputSection from "./photoshoot-calculator/InputSection";
 import ResultsSection from "./photoshoot-calculator/ResultsSection";
 import { calculateResults } from "./photoshoot-calculator/calculations";
@@ -36,6 +39,14 @@ const PhotoshootCalculator = ({ className }: PhotoshootCalculatorProps) => {
             ai={results.ai}
             photoCount={photoCount}
           />
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link to="/contact">
+            <Button size="lg" className="bg-black text-white hover:bg-gray-800">
+              Save on Your Photoshoot <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

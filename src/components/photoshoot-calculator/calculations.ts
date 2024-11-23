@@ -50,19 +50,12 @@ export const calculateResults = (
     travelCosts + 
     studioRental;
 
-  // AI Costs
-  const aiPerImage = 20;
-  const promptEngineering = 200;
-  const revisions = photoCount * 10;
-  const styleConsultation = 150;
+  // AI Costs - base price $100 plus complexity factors
+  const basePrice = 100;
+  const complexityFactor = (photoCount * 0.2) + (outfitCount * 0.3) + (locationCount * 0.4) + (modelCount * 0.5);
+  const aiTotal = Math.round(basePrice * (1 + complexityFactor));
 
-  const aiTotal = 
-    (photoCount * aiPerImage) + 
-    promptEngineering + 
-    revisions + 
-    styleConsultation;
-
-  // Time calculations (in hours)
+  // Time calculations (in hours) - AI time now scales with complexity
   const traditionalTime = {
     preProduction: locationCount * 4 + outfitCount * 2,
     shootTime: locationCount * 4 + outfitCount * 2,
@@ -71,11 +64,11 @@ export const calculateResults = (
   };
 
   const aiTime = {
-    preparation: 2,
-    promptWriting: photoCount * 0.25,
-    generation: photoCount * 0.1,
-    review: photoCount * 0.25,
-    adjustments: photoCount * 0.2,
+    preparation: 1 + (modelCount * 0.5),
+    promptWriting: photoCount * 0.5 + (outfitCount * 0.2),
+    generation: photoCount * 0.2 + (locationCount * 0.3),
+    review: photoCount * 0.3 + (modelCount * 0.2),
+    adjustments: photoCount * 0.4 + (outfitCount * 0.2),
   };
 
   const totalTraditionalTime = 
@@ -114,10 +107,8 @@ export const calculateResults = (
       costs: {
         total: aiTotal,
         breakdown: {
-          perImage: photoCount * aiPerImage,
-          promptEngineering,
-          revisions,
-          styleConsultation,
+          basePrice,
+          complexityFactors: aiTotal - basePrice,
         },
       },
       time: aiTime,
