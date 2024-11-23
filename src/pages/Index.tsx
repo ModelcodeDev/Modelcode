@@ -44,7 +44,7 @@ const Index = () => {
       <div 
         className="absolute inset-0 z-0 block md:hidden"
         style={{
-          backgroundImage: "url('/Home background - mobile.jpg')",
+          backgroundImage: "url('/lovable-uploads/899b484d-7aa9-418a-bed0-3d4fe1029897.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
