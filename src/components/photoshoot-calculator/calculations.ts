@@ -30,6 +30,7 @@ const LOCATION_COST = 1000;
 
 const TRADITIONAL_TIME = 165.0;
 const AI_TIME = 64.4;
+const AI_COST_PERCENTAGE = 0.3; // Fixed 30% of traditional cost for consistent pricing
 
 export const calculateResults = (
   photosPerOutfit: number,
@@ -54,9 +55,8 @@ export const calculateResults = (
 
   const traditionalTotal = basePhotoCost + modelCost + locationCost;
 
-  // AI cost calculation (random between 20-40% of traditional)
-  const aiPercentage = 0.2 + (Math.random() * 0.2); // Random between 0.2 and 0.4
-  const aiTotal = Math.round(traditionalTotal * aiPercentage);
+  // AI cost calculation (fixed at 30% of traditional)
+  const aiTotal = Math.round(traditionalTotal * AI_COST_PERCENTAGE);
 
   // Time calculations
   const traditionalTime = {
