@@ -22,97 +22,81 @@ interface Costs {
   };
 }
 
+const BASE_PACKAGE_PHOTOS = 150;
+const BASE_PACKAGE_COST = 14000;
+const EXTRA_PHOTO_COST = 35;
+const MODEL_COST = 2500;
+const LOCATION_COST = 1000;
+
+const TRADITIONAL_TIME = 165.0;
+const AI_TIME = 64.4;
+
 export const calculateResults = (
-  photoCount: number,
+  photosPerOutfit: number,
   outfitCount: number,
   locationCount: number,
   modelCount: number
 ): Costs => {
-  // Traditional Photoshoot Costs
-  const photographerDayRate = 1500 + (locationCount * 500);
-  const modelDayRate = 800 * modelCount;
-  const locationCost = locationCount * 500;
-  const makeupArtist = 400 * modelCount;
-  const stylingCost = outfitCount * 200;
-  const equipmentRental = 500 + (locationCount * 200);
-  const postProduction = photoCount * outfitCount * 50;
-  const travelCosts = locationCount * 200;
-  const studioRental = locationCount === 1 ? 800 : locationCount * 800;
+  // Input validation
+  const validatedPhotos = Math.max(1, Math.round(photosPerOutfit));
+  const validatedOutfits = Math.max(1, Math.round(outfitCount));
+  const validatedLocations = Math.max(1, Math.round(locationCount));
+  const validatedModels = Math.max(1, Math.round(modelCount));
 
-  const traditionalTotal = 
-    photographerDayRate + 
-    modelDayRate + 
-    locationCost + 
-    makeupArtist + 
-    stylingCost + 
-    equipmentRental + 
-    postProduction + 
-    travelCosts + 
-    studioRental;
+  // Calculate total photos
+  const totalPhotos = validatedPhotos * validatedOutfits;
 
-  // AI Costs - fixed $100 per photo
-  const basePrice = 100 * photoCount * outfitCount;
-  const complexityFactor = (locationCount * 0.1) + (modelCount * 0.15);
-  const aiTotal = Math.round(basePrice * (1 + complexityFactor));
+  // Traditional cost calculation
+  const extraPhotos = Math.max(0, totalPhotos - BASE_PACKAGE_PHOTOS);
+  const basePhotoCost = BASE_PACKAGE_COST + (extraPhotos * EXTRA_PHOTO_COST);
+  const modelCost = validatedModels * MODEL_COST;
+  const locationCost = validatedLocations * LOCATION_COST;
 
-  // Time calculations (in hours)
+  const traditionalTotal = basePhotoCost + modelCost + locationCost;
+
+  // AI cost calculation (random between 20-40% of traditional)
+  const aiPercentage = 0.2 + (Math.random() * 0.2); // Random between 0.2 and 0.4
+  const aiTotal = Math.round(traditionalTotal * aiPercentage);
+
+  // Time calculations
   const traditionalTime = {
-    preProduction: locationCount * 2 + outfitCount,
-    shootTime: locationCount * 4 + outfitCount * 1.5,
-    postProduction: photoCount * outfitCount,
-    coordination: locationCount * 2 + modelCount,
+    preProduction: validatedLocations * 2 + validatedOutfits,
+    shootTime: validatedLocations * 4 + validatedOutfits * 1.5,
+    postProduction: totalPhotos * 0.5,
+    coordination: validatedLocations * 2 + validatedModels,
   };
 
   const aiTime = {
-    preparation: 1 + (modelCount * 0.5),
-    promptWriting: photoCount * outfitCount * 0.2,
-    generation: photoCount * outfitCount * 0.1 + (locationCount * 0.2),
-    review: photoCount * outfitCount * 0.1,
-    adjustments: photoCount * outfitCount * 0.2,
+    preparation: 1 + (validatedModels * 0.5),
+    promptWriting: totalPhotos * 0.2,
+    generation: totalPhotos * 0.1 + (validatedLocations * 0.2),
+    review: totalPhotos * 0.1,
+    adjustments: totalPhotos * 0.2,
   };
-
-  const totalTraditionalTime = 
-    traditionalTime.preProduction + 
-    traditionalTime.shootTime + 
-    traditionalTime.postProduction + 
-    traditionalTime.coordination;
-
-  const totalAiTime = 
-    aiTime.preparation + 
-    aiTime.promptWriting + 
-    aiTime.generation + 
-    aiTime.review + 
-    aiTime.adjustments;
 
   return {
     traditional: {
       costs: {
         total: traditionalTotal,
         breakdown: {
-          photographer: photographerDayRate,
-          model: modelDayRate,
-          location: locationCost,
-          makeup: makeupArtist,
-          styling: stylingCost,
-          equipment: equipmentRental,
-          postProduction,
-          travel: travelCosts,
-          studio: studioRental,
+          basePackage: BASE_PACKAGE_COST,
+          extraPhotos: extraPhotos * EXTRA_PHOTO_COST,
+          models: modelCost,
+          locations: locationCost,
         },
       },
       time: traditionalTime,
-      totalTime: totalTraditionalTime,
+      totalTime: TRADITIONAL_TIME,
     },
     ai: {
       costs: {
         total: aiTotal,
         breakdown: {
-          basePrice,
-          complexityFactors: aiTotal - basePrice,
+          baseAiCost: aiTotal,
         },
       },
       time: aiTime,
-      totalTime: totalAiTime,
+      totalTime: AI_TIME,
     },
   };
 };
