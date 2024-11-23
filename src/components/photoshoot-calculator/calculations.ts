@@ -29,15 +29,15 @@ export const calculateResults = (
   modelCount: number
 ): Costs => {
   // Traditional Photoshoot Costs
-  const photographerDayRate = 1500;
-  const modelDayRate = 1200 * modelCount;
-  const locationCost = locationCount * 500;
-  const makeupArtist = 400 * modelCount;
-  const stylingCost = outfitCount * 200;
-  const equipmentRental = 300;
-  const postProduction = photoCount * 50;
-  const travelCosts = locationCount * 200;
-  const studioRental = locationCount === 1 ? 800 : 0;
+  const photographerDayRate = 2500;
+  const modelDayRate = 1500 * modelCount;
+  const locationCost = locationCount * 800;
+  const makeupArtist = 600 * modelCount;
+  const stylingCost = outfitCount * 300;
+  const equipmentRental = 1000;
+  const postProduction = photoCount * outfitCount * 80;
+  const travelCosts = locationCount * 400;
+  const studioRental = locationCount === 1 ? 1200 : locationCount * 1200;
 
   const traditionalTotal = 
     photographerDayRate + 
@@ -50,25 +50,25 @@ export const calculateResults = (
     travelCosts + 
     studioRental;
 
-  // AI Costs - base price $100 plus complexity factors
-  const basePrice = 100;
-  const complexityFactor = (photoCount * 0.2) + (outfitCount * 0.3) + (locationCount * 0.4) + (modelCount * 0.5);
+  // AI Costs - base price $100 per photo
+  const basePrice = 100 * photoCount * outfitCount;
+  const complexityFactor = (locationCount * 0.2) + (modelCount * 0.3);
   const aiTotal = Math.round(basePrice * (1 + complexityFactor));
 
-  // Time calculations (in hours) - AI time now scales with complexity
+  // Time calculations (in hours)
   const traditionalTime = {
     preProduction: locationCount * 4 + outfitCount * 2,
-    shootTime: locationCount * 4 + outfitCount * 2,
-    postProduction: photoCount * 1.5,
-    coordination: locationCount * 2 + outfitCount,
+    shootTime: locationCount * 6 + outfitCount * 3,
+    postProduction: photoCount * outfitCount * 2,
+    coordination: locationCount * 3 + modelCount * 2,
   };
 
   const aiTime = {
     preparation: 1 + (modelCount * 0.5),
-    promptWriting: photoCount * 0.5 + (outfitCount * 0.2),
-    generation: photoCount * 0.2 + (locationCount * 0.3),
-    review: photoCount * 0.3 + (modelCount * 0.2),
-    adjustments: photoCount * 0.4 + (outfitCount * 0.2),
+    promptWriting: photoCount * outfitCount * 0.3,
+    generation: photoCount * outfitCount * 0.2 + (locationCount * 0.3),
+    review: photoCount * outfitCount * 0.2,
+    adjustments: photoCount * outfitCount * 0.3,
   };
 
   const totalTraditionalTime = 

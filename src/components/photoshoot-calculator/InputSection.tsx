@@ -55,14 +55,14 @@ const InputSection = ({
 
       <div className="space-y-4">
         <label className="block text-sm font-medium">
-          Number of Final Photos Per Product
+          Number of Final Photos Per Outfit/Look
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger className="ml-2">
                 <Info className="h-4 w-4 inline" />
               </TooltipTrigger>
               <TooltipContent>
-                <p>Total number of unique final images needed per product</p>
+                <p>Total number of unique final images needed per outfit/look</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

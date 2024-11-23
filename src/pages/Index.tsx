@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import SavingsCalculator from "@/components/SavingsCalculator";
 import PhotoshootCalculator from "@/components/PhotoshootCalculator";
 
 const Index = () => {
+  const scrollToWhySection = () => {
+    const whySection = document.querySelector('#why-modelcode');
+    whySection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const portfolioPreviewImages = [
     '/lovable-uploads/b861ca7f-8e35-43a6-9c34-28e7a0928398.png',
     '/lovable-uploads/7a94c616-ae96-4056-8ded-052afef3b069.png',
@@ -69,14 +73,21 @@ const Index = () => {
               Transform your fashion brand with AI-powered photography that delivers
               unlimited possibilities, perfect consistency, and unmatched efficiency.
             </p>
-            <Button size="lg" className="mt-8 bg-white text-black hover:bg-gray-200">
-              Calculate your savings <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="space-y-4">
+              <Button size="lg" className="mt-8 bg-white text-black hover:bg-gray-200">
+                Calculate your savings <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <div>
+                <button onClick={scrollToWhySection} className="text-white hover:text-gray-300 underline">
+                  Learn how it works
+                </button>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Why Modelcode? Section */}
-        <section className="py-20 bg-white">
+        <section id="why-modelcode" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center mb-12">Why Modelcode?</h2>
             <div className="flex flex-col md:flex-row gap-12">
@@ -102,24 +113,9 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Simple Calculator Section */}
-        <SavingsCalculator />
-
         {/* Advanced Calculator Section */}
         <PhotoshootCalculator className="bg-gray-50" />
         
-        {/* CTA Section */}
-        <div className="bg-black/80 py-12 text-center">
-          <div className="container mx-auto px-4">
-            <h3 className="text-2xl font-semibold text-white mb-6">Ready to transform your product photography?</h3>
-            <Link to="/contact">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-200">
-                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-
         {/* Portfolio Preview Section */}
         <section className="py-20 bg-white">
           <div className="container">

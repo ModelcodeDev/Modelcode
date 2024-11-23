@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
 
 const Contact = () => {
@@ -38,13 +37,6 @@ const Contact = () => {
                 <Mail className="h-6 w-6" />
                 <span>Kordian@modelcode.io</span>
               </a>
-
-              <Button 
-                className="w-full mt-8 bg-white text-black hover:bg-gray-200"
-                size="lg"
-              >
-                Schedule a Consultation
-              </Button>
             </div>
           </div>
         </div>
