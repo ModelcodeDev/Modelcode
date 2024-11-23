@@ -8,9 +8,10 @@ import { calculateResults } from "./photoshoot-calculator/calculations";
 
 interface PhotoshootCalculatorProps {
   className?: string;
+  id?: string;
 }
 
-const PhotoshootCalculator = ({ className }: PhotoshootCalculatorProps) => {
+const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
   const [photoCount, setPhotoCount] = useState<number>(1);
   const [outfitCount, setOutfitCount] = useState<number>(1);
   const [locationCount, setLocationCount] = useState<number>(1);
@@ -27,7 +28,7 @@ const PhotoshootCalculator = ({ className }: PhotoshootCalculatorProps) => {
   };
 
   return (
-    <section className={`py-20 ${className}`}>
+    <section id={id} className={`py-20 ${className}`}>
       <div className="container max-w-6xl mx-auto px-4">
         <h2 className="section-title text-center mb-4">Calculate Your Savings</h2>
         

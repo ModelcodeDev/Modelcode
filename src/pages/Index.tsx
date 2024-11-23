@@ -20,6 +20,11 @@ const Index = () => {
     whySection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToCalculator = () => {
+    const calculatorSection = document.querySelector('#calculator-section');
+    calculatorSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const portfolioPreviewImages = [
     '/lovable-uploads/b861ca7f-8e35-43a6-9c34-28e7a0928398.png',
     '/lovable-uploads/7a94c616-ae96-4056-8ded-052afef3b069.png',
@@ -100,7 +105,11 @@ const Index = () => {
               unlimited possibilities, perfect consistency, and unmatched efficiency.
             </p>
             <div className="space-y-4">
-              <Button size="lg" className="mt-8 bg-white text-black hover:bg-gray-200">
+              <Button 
+                size="lg" 
+                className="mt-8 bg-white text-black hover:bg-gray-200"
+                onClick={scrollToCalculator}
+              >
                 Calculate your savings <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <div>
@@ -140,7 +149,7 @@ const Index = () => {
         </section>
 
         {/* Advanced Calculator Section */}
-        <PhotoshootCalculator className="bg-gray-50" />
+        <PhotoshootCalculator id="calculator-section" className="bg-gray-50" />
         
         {/* Portfolio Preview Section */}
         <section className="py-20 bg-white">
