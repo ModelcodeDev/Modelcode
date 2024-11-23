@@ -31,7 +31,7 @@ const Index = () => {
       <div 
         className="absolute inset-0 z-0 hidden md:block"
         style={{
-          backgroundImage: "url('/lovable-uploads/4bd6ab60-5e02-4314-adcb-146db2fc78ea.png')",
+          backgroundImage: "url('/Home background - desktop.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -43,7 +43,7 @@ const Index = () => {
       <div 
         className="absolute inset-0 z-0 block md:hidden"
         style={{
-          backgroundImage: "url('/lovable-uploads/17417411-bd67-4de9-b67b-dd2fb7a136fe.png')",
+          backgroundImage: "url('/Home background - mobile.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -73,26 +73,26 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Process Section */}
+        {/* Benefits Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <h2 className="section-title">How it works</h2>
-                <div className="space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+              <div className="lg:col-span-2 space-y-8">
+                <h2 className="section-title mb-12">Benefits</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="fade-in">
-                      <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-                      <p className="text-gray-600">{benefit.description}</p>
+                    <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                      <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative lg:mt-20">
                 <img
-                  src="/lovable-uploads/92328c47-7f64-47c7-8cca-f94c93653397.png"
+                  src="/Modelocode - process.jpg"
                   alt="ModelCode process visualization"
-                  className="w-full rounded-lg shadow-lg"
+                  className="w-full rounded-lg shadow-lg max-w-md mx-auto"
                 />
               </div>
             </div>
