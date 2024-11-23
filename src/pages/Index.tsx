@@ -74,16 +74,20 @@ const Index = () => {
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
               Bring Your{' '}
-              <span className="inline-block min-w-[160px]">
-                <span 
-                  key={words[currentWord]}
-                  className="text-blue-400 absolute animate-[fadeInOut_2s_ease-in-out]"
-                >
-                  {words[currentWord]}
-                </span>
+              <span className="relative inline-block">
+                {words.map((word, index) => (
+                  <span
+                    key={word}
+                    className={`absolute left-0 text-blue-400 ${
+                      index === currentWord ? 'animate-word-change' : 'opacity-0'
+                    }`}
+                  >
+                    {word}
+                  </span>
+                ))}
+                <span className="invisible">{words[0]}</span>
               </span>
-              <br />
-              to Life
+              {' '}to Life
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Transform your fashion brand with AI-powered photography that delivers
