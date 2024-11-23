@@ -3,10 +3,15 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PhotoshootCalculator from "@/components/PhotoshootCalculator";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations/translations";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Index = () => {
   const [currentWord, setCurrentWord] = useState(0);
   const words = ["Products", "Outfits", "Looks", "Clothes"];
+  const { language } = useLanguage();
+  const t = translations[language];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,21 +38,26 @@ const Index = () => {
 
   const benefits = [
     {
-      title: "Adapt to any market",
-      description: "Choose models and visuals tailored for Asia, the US, or Europe. Stay ahead in the fast-paced fashion world with unmatched flexibility"
+      title: t.adaptToMarket,
+      description: t.adaptToMarketDesc
     },
     {
-      title: "Limitless sessions",
-      description: "Diverse models and any location. Create visuals more affordably than traditional shoots, without logistics costs or complex arrangements."
+      title: t.limitlessSessions,
+      description: t.limitlessSessionsDesc
     },
     {
-      title: "Your brand concept",
-      description: "Modelcode allows you to create visuals that fully realize your brand's vision. Alignment with your brand concept? Unlimited!​"
+      title: t.brandConcept,
+      description: t.brandConceptDesc
     }
   ];
 
   return (
     <div className="min-h-screen relative">
+      {/* Language Switcher */}
+      <div className="fixed top-4 right-4 z-50">
+        <LanguageSwitcher />
+      </div>
+
       {/* Background Images */}
       <div 
         className="absolute inset-0 z-0 hidden md:block"
@@ -78,8 +88,7 @@ const Index = () => {
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
-              {/* Desktop version */}
-              <span className="hidden md:inline">Bring your products to life</span>
+              <span className="hidden md:inline">{t.bringProductsToLife}</span>
               
               {/* Mobile version */}
               <span className="md:hidden">
@@ -100,21 +109,17 @@ const Index = () => {
                 <span className="block">to Life</span>
               </span>
             </h1>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              Transform your fashion brand with AI-powered photography that delivers
-              unlimited possibilities, perfect consistency, and unmatched efficiency.
-            </p>
             <div className="space-y-4">
               <Button 
                 size="lg" 
                 className="mt-8 bg-white text-black hover:bg-gray-200"
                 onClick={scrollToCalculator}
               >
-                Calculate your savings <ArrowRight className="ml-2 h-4 w-4" />
+                {t.calculateSavings} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <div>
                 <button onClick={scrollToWhySection} className="text-white hover:text-gray-300 underline">
-                  Learn how it works
+                  {t.learnHow}
                 </button>
               </div>
             </div>
@@ -124,9 +129,8 @@ const Index = () => {
         {/* Why Modelcode? Section */}
         <section id="why-modelcode" className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center mb-12">Why Modelcode?</h2>
+            <h2 className="section-title text-center mb-12">{t.whyModelcode}</h2>
             <div className="flex flex-col md:flex-row gap-12">
-              {/* Process Visualization - Left Side on Desktop */}
               <div className="md:w-1/3">
                 <img
                   src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
@@ -135,7 +139,6 @@ const Index = () => {
                 />
               </div>
               
-              {/* Benefits - Right Side on Desktop */}
               <div className="md:w-2/3 space-y-6">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg">
@@ -154,7 +157,7 @@ const Index = () => {
         {/* Portfolio Preview Section */}
         <section className="py-20 bg-white">
           <div className="container">
-            <h2 className="section-title text-center mb-16">Featured Work</h2>
+            <h2 className="section-title text-center mb-16">{t.featuredWork}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {portfolioPreviewImages.map((image, index) => (
                 <div 
@@ -172,7 +175,7 @@ const Index = () => {
             <div className="text-center">
               <Link to="/portfolio">
                 <Button size="lg" className="bg-black text-white hover:bg-gray-800">
-                  View Full Portfolio <ArrowRight className="ml-2 h-4 w-4" />
+                  {t.viewPortfolio} <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
