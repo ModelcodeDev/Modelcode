@@ -49,7 +49,7 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
                   ${lastCost.toLocaleString()}
                 </p>
                 <p className="text-gray-600 text-center italic">
-                  It took long, right? 😈
+                  Time: It took long, right? 😈
                 </p>
               </div>
               
@@ -59,7 +59,7 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
                   ${modelcodeCost.toLocaleString()}
                 </p>
                 <p className="text-blue-600 font-semibold text-center">
-                  hyperfast ⚡
+                  Time: hyperfast ⚡
                 </p>
               </div>
             </div>
