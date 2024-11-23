@@ -10,15 +10,42 @@ const Index = () => {
     '/lovable-uploads/082622d6-76ab-4044-ab90-f7e551ec7346.png',
   ];
 
+  const benefits = [
+    {
+      title: "Adapt to any market",
+      description: "Choose models and visuals tailored for Asia, the US, or Europe. Stay ahead in the fast-paced fashion world with unmatched flexibility"
+    },
+    {
+      title: "Limitless sessions",
+      description: "Diverse models and any location. Create visuals more affordably than traditional shoots, without logistics costs or complex arrangements."
+    },
+    {
+      title: "Your brand concept",
+      description: "ModelCode allows you to create visuals that fully realize your brand's vision. Alignment with your brand concept? Unlimited!​"
+    }
+  ];
+
   return (
     <div className="min-h-screen relative">
-      {/* Background Image */}
+      {/* Background Image - Desktop and Mobile */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 hidden md:block"
         style={{
           backgroundImage: "url('/lovable-uploads/4bd6ab60-5e02-4314-adcb-146db2fc78ea.png')",
           backgroundSize: "cover",
-          backgroundPosition: "left center",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "brightness(0.5)",
+          height: "100vh",
+          width: "100vw"
+        }}
+      />
+      <div 
+        className="absolute inset-0 z-0 block md:hidden"
+        style={{
+          backgroundImage: "url('/lovable-uploads/17417411-bd67-4de9-b67b-dd2fb7a136fe.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           filter: "brightness(0.5)",
           height: "100vh",
@@ -43,6 +70,32 @@ const Index = () => {
             <Button size="lg" className="mt-8 bg-white text-black hover:bg-gray-200">
               Calculate your savings <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <h2 className="section-title">How it works</h2>
+                <div className="space-y-8">
+                  {benefits.map((benefit, index) => (
+                    <div key={index} className="fade-in">
+                      <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                      <p className="text-gray-600">{benefit.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <img
+                  src="/lovable-uploads/92328c47-7f64-47c7-8cca-f94c93653397.png"
+                  alt="ModelCode process visualization"
+                  className="w-full rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
