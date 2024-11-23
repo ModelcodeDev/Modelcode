@@ -76,22 +76,27 @@ const Index = () => {
 
         {/* Why Modelcode? Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="section-title mb-12">Why Modelcode?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-12">
-              <img
-                src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
-                alt="Modelcode process visualization"
-                className="w-full max-w-lg mx-auto rounded-lg shadow-lg"
-              />
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center mb-12">Why Modelcode?</h2>
+            <div className="flex flex-col md:flex-row gap-12">
+              {/* Process Visualization - Left Side on Desktop */}
+              <div className="md:w-1/3">
+                <img
+                  src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
+                  alt="Modelcode process visualization"
+                  className="w-full mx-auto rounded-lg"
+                />
+              </div>
+              
+              {/* Benefits - Right Side on Desktop */}
+              <div className="md:w-2/3 space-y-6">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
