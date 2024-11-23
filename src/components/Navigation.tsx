@@ -23,9 +23,6 @@ const Navigation = () => {
               <Link to="/" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
                 Home
               </Link>
-              <Link to="/about" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
-                About
-              </Link>
               <Link to="/portfolio" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
                 Portfolio
               </Link>
@@ -57,13 +54,6 @@ const Navigation = () => {
                 onClick={toggleMenu}
               >
                 Home
-              </Link>
-              <Link
-                to="/about"
-                className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
-                onClick={toggleMenu}
-              >
-                About
               </Link>
               <Link
                 to="/portfolio"

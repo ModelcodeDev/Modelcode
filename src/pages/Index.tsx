@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Camera, Heart, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import Navigation from "@/components/Navigation";
 import SavingsCalculator from "@/components/SavingsCalculator";
 
 const Index = () => {
@@ -27,9 +26,6 @@ const Index = () => {
         }}
       />
 
-      {/* Navigation */}
-      <Navigation />
-
       {/* Content */}
       <div className="relative z-10">
         {/* Hero Section */}
@@ -45,7 +41,7 @@ const Index = () => {
               unlimited possibilities, perfect consistency, and unmatched efficiency.
             </p>
             <Button size="lg" className="mt-8 bg-white text-black hover:bg-gray-200">
-              Pimp My Photos <ArrowRight className="ml-2 h-4 w-4" />
+              Calculate your savings <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </section>
@@ -80,101 +76,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-
-        {/* Process Section */}
-        <section className="py-20 bg-black/80">
-          <div className="container">
-            <h2 className="section-title text-center mb-16 text-white">Our Process</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: <Camera className="h-8 w-8" />,
-                  title: "Product Photos",
-                  description: "Upload your product images",
-                },
-                {
-                  icon: <Heart className="h-8 w-8" />,
-                  title: "Creative Brief",
-                  description: "Define your vision and requirements",
-                },
-                {
-                  icon: <Star className="h-8 w-8" />,
-                  title: "AI Generation",
-                  description: "Let our AI create perfect shots",
-                },
-                {
-                  icon: <ArrowRight className="h-8 w-8" />,
-                  title: "Final Delivery",
-                  description: "Receive your stunning photos",
-                },
-              ].map((step, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-white/10 backdrop-blur-sm rounded-lg text-center fade-in-right text-white"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="mb-4 inline-block">{step.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="py-20 bg-black/80">
-          <div className="container max-w-4xl">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="section-title text-white">Get in Touch</h2>
-              <p className="text-gray-300">
-                Ready to transform your fashion photography? Contact us today.
-              </p>
-            </div>
-            <div className="space-y-4 text-center">
-              <p className="text-lg text-white">
-                Email:{" "}
-                <a
-                  href="mailto:kordian@modelcode.io"
-                  className="text-white hover:text-gray-300"
-                >
-                  kordian@modelcode.io
-                </a>
-              </p>
-              <p className="text-lg text-white">
-                Phone:{" "}
-                <a href="tel:+48797502346" className="text-white hover:text-gray-300">
-                  +48 797 502 346
-                </a>
-              </p>
-              <p className="text-lg text-white">
-                Website:{" "}
-                <a
-                  href="https://modelcode.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-gray-300"
-                >
-                  modelcode.io
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="py-8 bg-black/80 text-white text-center">
-          <div className="container">
-            <div className="space-y-4">
-              <p>
-                <Link to="/privacy" className="hover:underline">
-                  Privacy Policy
-                </Link>
-              </p>
-              <p>Made with ❤️ in Warsaw</p>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   );
