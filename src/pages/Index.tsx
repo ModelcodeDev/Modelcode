@@ -73,34 +73,42 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Benefits Section */}
+        {/* Why Model Code? Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-              <div className="lg:col-span-2 space-y-8">
-                <h2 className="section-title mb-12">Benefits</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                      <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-                    </div>
-                  ))}
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="section-title mb-12">Why Model Code?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                 </div>
-              </div>
-              <div className="relative lg:mt-20">
-                <img
-                  src="/Modelocode - process.jpg"
-                  alt="ModelCode process visualization"
-                  className="w-full rounded-lg shadow-lg max-w-md mx-auto"
-                />
-              </div>
+              ))}
+            </div>
+            <div className="mt-12">
+              <img
+                src="/Modelocode - process.jpg"
+                alt="ModelCode process visualization"
+                className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </section>
 
         {/* Calculator Section */}
         <SavingsCalculator />
+        
+        {/* CTA Section */}
+        <div className="bg-black/80 py-12 text-center">
+          <div className="container mx-auto px-4">
+            <h3 className="text-2xl font-semibold text-white mb-6">Ready to transform your product photography?</h3>
+            <Link to="/contact">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-200">
+                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
 
         {/* Portfolio Preview Section */}
         <section className="py-20 bg-white">
