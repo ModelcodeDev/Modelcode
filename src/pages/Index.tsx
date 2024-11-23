@@ -21,7 +21,7 @@ const Index = () => {
     },
     {
       title: "Your brand concept",
-      description: "ModelCode allows you to create visuals that fully realize your brand's vision. Alignment with your brand concept? Unlimited!​"
+      description: "Modelcode allows you to create visuals that fully realize your brand's vision. Alignment with your brand concept? Unlimited!​"
     }
   ];
 
@@ -74,10 +74,10 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Why Model Code? Section */}
+        {/* Why Modelcode? Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="section-title mb-12">Why Model Code?</h2>
+            <h2 className="section-title mb-12">Why Modelcode?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="fade-in bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
@@ -88,9 +88,9 @@ const Index = () => {
             </div>
             <div className="mt-12">
               <img
-                src="/Modelocode - process.jpg"
-                alt="ModelCode process visualization"
-                className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
+                src="/lovable-uploads/58723372-d470-4ebf-9e33-b00222383190.png"
+                alt="Modelcode process visualization"
+                className="w-full max-w-lg mx-auto rounded-lg shadow-lg"
               />
             </div>
           </div>
