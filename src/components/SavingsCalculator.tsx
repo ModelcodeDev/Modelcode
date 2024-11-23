@@ -38,7 +38,7 @@ const SavingsCalculator = ({ className }: SavingsCalculatorProps) => {
               <label className="block text-white text-sm font-medium">
                 How many products do you have?
               </label>
-              <div className="px-2">
+              <div className="px-2 touch-none">
                 <Slider
                   value={[productCount]}
                   onValueChange={(values) => setProductCount(values[0])}
@@ -54,7 +54,7 @@ const SavingsCalculator = ({ className }: SavingsCalculatorProps) => {
               <label className="block text-white text-sm font-medium">
                 How many photos per product?
               </label>
-              <div className="px-2">
+              <div className="px-2 touch-none">
                 <Slider
                   value={[photosPerProduct]}
                   onValueChange={(values) => setPhotosPerProduct(values[0])}
