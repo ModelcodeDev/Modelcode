@@ -18,7 +18,14 @@ export const translations = {
     timeHyperfast: "Time: hyperfast ⚡",
     saveOnPhotoshoot: "Save on Your Photoshoot",
     checkOurSessions: "Check our sessions",
-    viewPortfolio: "View Full Portfolio"
+    viewPortfolio: "View Full Portfolio",
+    navigation: {
+      home: "Home",
+      portfolio: "Portfolio",
+      contact: "Contact"
+    },
+    seeOurSessions: "See our sessions",
+    followUs: "Follow us"
   },
   pl: {
     bringProductsToLife: "Ożyw swoje produkty",
@@ -39,6 +46,13 @@ export const translations = {
     timeHyperfast: "Czas: błyskawicznie ⚡",
     saveOnPhotoshoot: "Oszczędź na sesji zdjęciowej",
     checkOurSessions: "Zobacz nasze sesje",
-    viewPortfolio: "Zobacz pełne portfolio"
+    viewPortfolio: "Zobacz pełne portfolio",
+    navigation: {
+      home: "Strona główna",
+      portfolio: "Portfolio",
+      contact: "Kontakt"
+    },
+    seeOurSessions: "Zobacz nasze sesje",
+    followUs: "Obserwuj nas"
   }
 };

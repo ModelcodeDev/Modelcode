@@ -2,9 +2,13 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations/translations";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -22,13 +26,13 @@ const Navigation = () => {
           <div className="hidden md:flex md:items-center md:space-x-8">
             <div className="flex items-baseline space-x-4">
               <Link to="/" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
-                Home
+                {t.navigation.home}
               </Link>
               <Link to="/portfolio" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
-                Portfolio
+                {t.navigation.portfolio}
               </Link>
               <Link to="/contact" className="text-white hover:text-gray-300 px-3 py-2 text-sm">
-                Contact
+                {t.navigation.contact}
               </Link>
             </div>
             <LanguageSwitcher />
@@ -55,21 +59,21 @@ const Navigation = () => {
                 className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
                 onClick={toggleMenu}
               >
-                Home
+                {t.navigation.home}
               </Link>
               <Link
                 to="/portfolio"
                 className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
                 onClick={toggleMenu}
               >
-                Portfolio
+                {t.navigation.portfolio}
               </Link>
               <Link
                 to="/contact"
                 className="text-white hover:text-gray-300 block px-3 py-2 text-sm"
                 onClick={toggleMenu}
               >
-                Contact
+                {t.navigation.contact}
               </Link>
               <div className="px-3 py-2">
                 <LanguageSwitcher />

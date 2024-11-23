@@ -30,6 +30,11 @@ const Index = () => {
     calculatorSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToSessions = () => {
+    const sessionsSection = document.querySelector('#sessions-section');
+    sessionsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const portfolioPreviewImages = [
     '/lovable-uploads/b861ca7f-8e35-43a6-9c34-28e7a0928398.png',
     '/lovable-uploads/7a94c616-ae96-4056-8ded-052afef3b069.png',
@@ -89,11 +94,15 @@ const Index = () => {
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
-              <span className="hidden md:inline">{t.bringProductsToLife}</span>
+              <span className="hidden md:inline">
+                {language === 'pl' ? t.bringProductsToLife : t.bringProductsToLife}
+              </span>
               
               {/* Mobile version */}
               <span className="md:hidden">
-                <span className="block">Bring Your</span>
+                <span className="block">
+                  {language === 'pl' ? 'Ożyw' : 'Bring Your'}
+                </span>
                 <span className="relative inline-flex justify-center">
                   {words.map((word, index) => (
                     <span
@@ -107,7 +116,9 @@ const Index = () => {
                   ))}
                   <span className="invisible">{words[0]}</span>
                 </span>
-                <span className="block">to Life</span>
+                <span className="block">
+                  {language === 'pl' ? 'swoje produkty' : 'to Life'}
+                </span>
               </span>
             </h1>
             <div className="space-y-4">
@@ -119,8 +130,8 @@ const Index = () => {
                 {t.calculateSavings} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <div>
-                <button onClick={scrollToWhySection} className="text-white hover:text-gray-300 underline">
-                  {t.learnHow}
+                <button onClick={scrollToSessions} className="text-white hover:text-gray-300 underline">
+                  {t.seeOurSessions}
                 </button>
               </div>
             </div>
@@ -146,7 +157,7 @@ const Index = () => {
         </section>
 
         {/* Featured Work Section */}
-        <section className="py-20 bg-white">
+        <section id="sessions-section" className="py-20 bg-white">
           <div className="container">
             <h2 className="section-title text-center mb-16">{t.checkOurSessions}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { Instagram } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations/translations";
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="py-8 bg-black/80 text-white text-center">
       <div className="container">
@@ -17,6 +22,14 @@ const Footer = () => {
               className="hover:text-gray-300"
             >
               <Instagram size={20} />
+            </a>
+            <a 
+              href="https://www.instagram.com/modelcode.io/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              {t.followUs}
             </a>
           </div>
           <p>Made with ❤️ in Warsaw</p>
