@@ -17,11 +17,32 @@ const PhotoshootCalculator = ({ className }: PhotoshootCalculatorProps) => {
   const [modelCount, setModelCount] = useState<number>(1);
 
   const results = calculateResults(photoCount, outfitCount, locationCount, modelCount);
+  const savings = results.traditional.costs.total - results.ai.costs.total;
+
+  const scrollToResults = () => {
+    const resultsElement = document.querySelector('#calculator-results');
+    if (resultsElement) {
+      resultsElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className={`py-20 ${className}`}>
       <div className="container max-w-6xl mx-auto px-4">
-        <h2 className="section-title text-center mb-12">Calculate Your Savings</h2>
+        <h2 className="section-title text-center mb-4">Calculate Your Savings</h2>
+        
+        {/* Mobile Summary */}
+        <div className="md:hidden text-center mb-8">
+          <p className="text-lg font-medium text-green-600">
+            Save up to ${savings.toLocaleString()}
+          </p>
+          <button 
+            onClick={scrollToResults}
+            className="text-sm text-blue-600 underline mt-1"
+          >
+            Learn more
+          </button>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <InputSection
@@ -34,11 +55,13 @@ const PhotoshootCalculator = ({ className }: PhotoshootCalculatorProps) => {
             modelCount={modelCount}
             setModelCount={setModelCount}
           />
-          <ResultsSection
-            traditional={results.traditional}
-            ai={results.ai}
-            photoCount={photoCount}
-          />
+          <div id="calculator-results">
+            <ResultsSection
+              traditional={results.traditional}
+              ai={results.ai}
+              photoCount={photoCount}
+            />
+          </div>
         </div>
 
         <div className="mt-12 text-center">
