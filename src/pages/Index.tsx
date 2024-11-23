@@ -74,10 +74,10 @@ const Index = () => {
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
               Bring Your{' '}
-              <span className="relative inline-block min-w-[160px]">
+              <span className="inline-block min-w-[160px]">
                 <span 
-                  className="absolute left-0 text-blue-400 animate-fade-in"
                   key={words[currentWord]}
+                  className="text-blue-400 absolute animate-[fadeInOut_2s_ease-in-out]"
                 >
                   {words[currentWord]}
                 </span>
