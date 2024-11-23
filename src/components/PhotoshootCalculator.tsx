@@ -14,10 +14,8 @@ interface PhotoshootCalculatorProps {
 const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
   const [photoCount, setPhotoCount] = useState<number>(1);
   const [outfitCount, setOutfitCount] = useState<number>(1);
-  const [locationCount, setLocationCount] = useState<number>(1);
-  const [modelCount, setModelCount] = useState<number>(1);
 
-  const results = calculateResults(photoCount, outfitCount, locationCount, modelCount);
+  const results = calculateResults(photoCount, outfitCount);
   const savings = results.traditional.costs.total - results.ai.costs.total;
 
   const scrollToResults = () => {
@@ -51,16 +49,12 @@ const PhotoshootCalculator = ({ className, id }: PhotoshootCalculatorProps) => {
             setOutfitCount={setOutfitCount}
             photoCount={photoCount}
             setPhotoCount={setPhotoCount}
-            locationCount={locationCount}
-            setLocationCount={setLocationCount}
-            modelCount={modelCount}
-            setModelCount={setModelCount}
           />
           <div id="calculator-results">
             <ResultsSection
               traditional={results.traditional}
               ai={results.ai}
-              photoCount={photoCount}
+              photoCount={photoCount * outfitCount}
             />
           </div>
         </div>
