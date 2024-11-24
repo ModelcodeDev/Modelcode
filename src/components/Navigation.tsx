@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations/translations";
@@ -9,7 +9,6 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
-  const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 

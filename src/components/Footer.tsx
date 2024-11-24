@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations/translations";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -31,6 +32,9 @@ const Footer = () => {
             >
               {t.followUs}
             </a>
+          </div>
+          <div className="md:hidden">
+            <LanguageSwitcher />
           </div>
           <p>Made with ❤️ in Warsaw</p>
         </div>

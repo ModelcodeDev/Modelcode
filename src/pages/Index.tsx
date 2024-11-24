@@ -99,32 +99,34 @@ const Index = () => {
         <section className="min-h-screen flex items-center justify-center px-4 py-20">
           <div className="text-center space-y-8 fade-in">
             <h1 className="hero-text text-white">
-              <span className="hidden md:inline">
-                {language === 'pl' ? t.bringProductsToLife : t.bringProductsToLife}
-              </span>
-              
-              {/* Mobile version */}
-              <span className="md:hidden">
-                <span className="block">
-                  {language === 'pl' ? 'Ożyw' : 'Bring Your'}
-                </span>
-                <span className="relative inline-flex justify-center">
-                  {words.map((word, index) => (
-                    <span
-                      key={word}
-                      className={`absolute block ${
-                        index === currentWord ? 'animate-word-change text-blue-400' : 'opacity-0'
-                      }`}
-                    >
-                      {word}
+              {language === 'pl' ? (
+                <span>Ożyw swoje produkty</span>
+              ) : (
+                <>
+                  <span className="hidden md:inline">
+                    {t.bringProductsToLife}
+                  </span>
+                  
+                  {/* Mobile version */}
+                  <span className="md:hidden">
+                    <span className="block">Bring Your</span>
+                    <span className="relative inline-flex justify-center">
+                      {words.map((word, index) => (
+                        <span
+                          key={word}
+                          className={`absolute block ${
+                            index === currentWord ? 'animate-word-change text-blue-400' : 'opacity-0'
+                          }`}
+                        >
+                          {word}
+                        </span>
+                      ))}
+                      <span className="invisible">{words[0]}</span>
                     </span>
-                  ))}
-                  <span className="invisible">{words[0]}</span>
-                </span>
-                <span className="block">
-                  {language === 'pl' ? 'swoje produkty' : 'to Life'}
-                </span>
-              </span>
+                    <span className="block">to Life</span>
+                  </span>
+                </>
+              )}
             </h1>
             <div className="space-y-4">
               <Button 
