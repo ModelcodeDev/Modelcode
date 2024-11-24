@@ -33,9 +33,9 @@ const Footer = () => {
               {t.followUs}
             </a>
           </div>
-          <div className="md:hidden flex items-center justify-center space-x-2">
+          <div className="flex items-center justify-center space-x-2">
             <LanguageSwitcher />
-            <span className="text-sm text-gray-300">Click to change language</span>
+            <span className="text-sm text-gray-300">{t.changeLanguage}</span>
           </div>
           <p>Made with ❤️ in Warsaw</p>
         </div>

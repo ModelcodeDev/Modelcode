@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations/translations";
 
@@ -35,7 +34,6 @@ const Navigation = () => {
                 {t.navigation.contact}
               </Link>
             </div>
-            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}

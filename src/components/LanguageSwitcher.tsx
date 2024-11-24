@@ -15,7 +15,7 @@ const LanguageSwitcher = () => {
       <DropdownMenuTrigger className="focus:outline-none">
         <Languages className="h-5 w-5 text-white" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="center" side="top">
         <DropdownMenuItem onClick={() => setLanguage('en')}>
           English
         </DropdownMenuItem>

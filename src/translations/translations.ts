@@ -25,7 +25,8 @@ export const translations = {
       contact: "Contact"
     },
     seeOurSessions: "See our sessions",
-    followUs: "Follow us"
+    followUs: "Follow us",
+    changeLanguage: "Click to change language"
   },
   pl: {
     bringProductsToLife: "Ożyw swoje produkty",
@@ -53,6 +54,7 @@ export const translations = {
       contact: "Kontakt"
     },
     seeOurSessions: "Zobacz nasze sesje",
-    followUs: "Obserwuj nas"
+    followUs: "Obserwuj nas",
+    changeLanguage: "Kliknij, aby zmienić język"
   }
 };
