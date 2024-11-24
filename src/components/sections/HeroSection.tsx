@@ -19,22 +19,32 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen relative">
-      {/* Background image */}
+      {/* Background image - Desktop */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 hidden md:block"
         style={{
           backgroundImage: "url('/lovable-uploads/7add61ac-380a-4d84-82b0-b3c33fb0eccb.png')",
           backgroundSize: "cover",
-          backgroundPosition: "center left",
-          filter: "brightness(0.9)",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      {/* Background image - Mobile */}
+      <div 
+        className="absolute inset-0 z-0 block md:hidden"
+        style={{
+          backgroundImage: "url('/lovable-uploads/470fd5ae-f8fb-4931-aeee-ff2aaa9d3e60.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       />
       
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center">
         <div className="container mx-auto px-4">
-          <div className="flex justify-end">
-            <div className="w-full md:w-1/2 lg:w-5/12 text-left space-y-8 fade-in bg-black/30 backdrop-blur-sm p-8 rounded-lg">
+          <div className="flex md:justify-end justify-center">
+            <div className="w-full md:w-1/2 lg:w-5/12 text-center md:text-left space-y-8 fade-in p-8 rounded-lg">
               <h1 className="text-4xl md:text-6xl font-bold text-white">
                 {language === 'pl' ? (
                   <span>Ożyw swoje produkty</span>
