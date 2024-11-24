@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
-import { Instagram } from "lucide-react";
+import { Instagram, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations/translations";
-import LanguageSwitcher from "./LanguageSwitcher";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Footer = () => {
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const t = translations[language];
 
   return (
@@ -34,8 +39,22 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex items-center justify-center space-x-2">
-            <LanguageSwitcher />
-            <span className="text-sm text-gray-300">{t.changeLanguage}</span>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-2 focus:outline-none">
+                <Languages className="h-5 w-5" />
+                <span className="text-sm text-gray-300 hover:text-white cursor-pointer">
+                  {t.changeLanguage}
+                </span>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" side="top">
+                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('pl')}>
+                  Polski
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <p>Made with ❤️ in Warsaw</p>
         </div>
