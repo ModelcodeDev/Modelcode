@@ -36,7 +36,32 @@ export const translations = {
     unlimitedCreativity: "Unlimited Creativity",
     unlimitedCreativityDesc: "Choose any style, model type, or setting—from classic studio shots to futuristic digital designs. Your imagination sets the limits.",
     competitiveEdge: "Competitive Edge",
-    competitiveEdgeDesc: "Stay ahead of the market by embracing innovative AI technology that allows your brand to stand out."
+    competitiveEdgeDesc: "Stay ahead of the market by embracing innovative AI technology that allows your brand to stand out.",
+    portfolio: {
+      title: "Our Portfolio",
+      subtitle: "Explore our latest AI-powered visuals that bring brands to life with style and impact.",
+      readyToTransform: "Ready to Transform Your Brand?",
+      transformDesc: "Let's create stunning visuals that capture your brand's essence and elevate your online presence.",
+      contactUs: "Contact Us Today"
+    },
+    contact: {
+      title: "Get In Touch",
+      subtitle: "Ready to transform your product photography?\nOur team is here to help you get started.",
+      phone: "+48 797 502 346",
+      email: "Kordian@modelcode.io"
+    },
+    privacy: {
+      title: "Privacy Policy",
+      lastUpdated: "Last updated",
+      intro: "At ModelCode, we respect your privacy and are committed to protecting your personal data.",
+      dataWeCollect: "Information We Collect",
+      dataWeCollectDesc: "We collect information that you provide directly to us, including contact information and product images.",
+      howWeUse: "How We Use Your Information",
+      howWeUseDesc: "We use the collected information to provide services, communicate with you, and improve our offerings.",
+      contact: "Contact Us",
+      contactDesc: "If you have questions about this Privacy Policy, please contact us at:"
+    },
+    privacyPolicy: "Privacy Policy"
   },
   pl: {
     bringProductsToLife: "Ożyw swoje produkty",
@@ -75,6 +100,31 @@ export const translations = {
     unlimitedCreativity: "Nieograniczona Kreatywność",
     unlimitedCreativityDesc: "Wybierz dowolny styl, typ modelu lub otoczenie—od klasycznych ujęć studyjnych po futurystyczne projekty.",
     competitiveEdge: "Przewaga Konkurencyjna",
-    competitiveEdgeDesc: "Wyprzedź rynek, wykorzystując innowacyjną technologię AI, która pozwala Twojej marce się wyróżnić."
+    competitiveEdgeDesc: "Wyprzedź rynek, wykorzystując innowacyjną technologię AI, która pozwala Twojej marce się wyróżnić.",
+    portfolio: {
+      title: "Nasze Portfolio",
+      subtitle: "Odkryj nasze najnowsze wizualizacje AI, które ożywiają marki z klasą i siłą oddziaływania.",
+      readyToTransform: "Gotowy na Transformację Swojej Marki?",
+      transformDesc: "Stwórzmy razem oszałamiające wizualizacje, które oddadzą esencję Twojej marki i wzniosą Twoją obecność online na wyższy poziom.",
+      contactUs: "Skontaktuj się z Nami"
+    },
+    contact: {
+      title: "Skontaktuj się",
+      subtitle: "Gotowy na transformację fotografii produktowej?\nNasz zespół jest tutaj, aby pomóc Ci rozpocząć.",
+      phone: "+48 797 502 346",
+      email: "Kordian@modelcode.io"
+    },
+    privacy: {
+      title: "Polityka Prywatności",
+      lastUpdated: "Ostatnia aktualizacja",
+      intro: "W ModelCode szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych.",
+      dataWeCollect: "Informacje, które zbieramy",
+      dataWeCollectDesc: "Zbieramy informacje, które przekazujesz nam bezpośrednio, w tym dane kontaktowe i zdjęcia produktów.",
+      howWeUse: "Jak wykorzystujemy Twoje informacje",
+      howWeUseDesc: "Wykorzystujemy zebrane informacje do świadczenia usług, komunikacji z Tobą i ulepszania naszej oferty.",
+      contact: "Kontakt",
+      contactDesc: "Jeśli masz pytania dotyczące Polityki Prywatności, skontaktuj się z nami:"
+    },
+    privacyPolicy: "Polityka Prywatności"
   }
 };

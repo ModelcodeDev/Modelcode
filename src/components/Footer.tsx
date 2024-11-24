@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="space-y-4">
           <div className="flex items-center justify-center space-x-4">
             <Link to="/privacy" className="hover:underline">
-              Privacy Policy
+              {t.privacyPolicy}
             </Link>
             <a 
               href="https://www.instagram.com/modelcode.io/" 

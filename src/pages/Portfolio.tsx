@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const Portfolio = () => {
   const { language } = useLanguage();
-  const t = translations[language];
+  const t = translations[language].portfolio;
 
   const portfolioImages = [
     '/lovable-uploads/7c0f567a-21de-4c4a-83bc-5d23877f9bab.png',
@@ -29,9 +29,9 @@ const Portfolio = () => {
   return (
     <div className="container py-20">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-4xl font-bold mb-4">Our Portfolio</h1>
+        <h1 className="text-4xl font-bold mb-4">{t.title}</h1>
         <p className="text-xl text-gray-600">
-          Explore our latest AI-powered visuals that bring brands to life with style and impact.
+          {t.subtitle}
         </p>
       </div>
 
@@ -51,13 +51,13 @@ const Portfolio = () => {
       </div>
 
       <div className="text-center py-16 bg-black/5 rounded-2xl">
-        <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Brand?</h2>
+        <h2 className="text-3xl font-bold mb-4">{t.readyToTransform}</h2>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          Let's create stunning visuals that capture your brand's essence and elevate your online presence.
+          {t.transformDesc}
         </p>
         <Link to="/contact">
           <Button size="lg" className="text-lg px-8 py-6">
-            Contact Us Today
+            {t.contactUs}
           </Button>
         </Link>
       </div>
