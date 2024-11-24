@@ -2,20 +2,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations/translations";
-import { useState, useEffect } from "react";
 
 export const HeroSection = () => {
-  const [currentWord, setCurrentWord] = useState(0);
-  const words = ["Products", "Outfits", "Looks", "Clothes"];
   const { language } = useLanguage();
   const t = translations[language];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollToCalculator = () => {
     const calculatorSection = document.querySelector('#calculator-section');
@@ -34,30 +24,7 @@ export const HeroSection = () => {
           {language === 'pl' ? (
             <span>Ożyw swoje produkty</span>
           ) : (
-            <>
-              <span className="hidden md:inline">
-                {t.bringProductsToLife}
-              </span>
-              
-              {/* Mobile version */}
-              <span className="md:hidden">
-                <span className="block">Bring Your</span>
-                <span className="relative inline-flex justify-center h-[1.5em]">
-                  {words.map((word, index) => (
-                    <span
-                      key={word}
-                      className={`absolute block transition-all duration-300 ${
-                        index === currentWord ? 'animate-word-change text-blue-400' : 'opacity-0'
-                      }`}
-                    >
-                      {word}
-                    </span>
-                  ))}
-                  <span className="invisible">{words[0]}</span>
-                </span>
-                <span className="block">to Life</span>
-              </span>
-            </>
+            <span>Bring Your Products to Life</span>
           )}
         </h1>
         <div className="space-y-4">
