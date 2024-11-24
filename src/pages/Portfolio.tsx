@@ -35,22 +35,21 @@ const Portfolio = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 mb-20 space-y-8">
         {portfolioImages.map((image, index) => (
           <div 
             key={index}
-            className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]"
+            className="break-inside-avoid-column mb-8"
           >
             <img
               src={image}
               alt={`Portfolio item ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-auto rounded-lg shadow-lg transition-transform hover:scale-[1.02]"
             />
           </div>
         ))}
       </div>
 
-      {/* CTA Section */}
       <div className="text-center py-16 bg-black/5 rounded-2xl">
         <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Brand?</h2>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">

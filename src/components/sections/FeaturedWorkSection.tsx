@@ -9,9 +9,9 @@ export const FeaturedWorkSection = () => {
   const t = translations[language];
 
   const portfolioPreviewImages = [
-    '/lovable-uploads/b861ca7f-8e35-43a6-9c34-28e7a0928398.png',
-    '/lovable-uploads/7a94c616-ae96-4056-8ded-052afef3b069.png',
-    '/lovable-uploads/082622d6-76ab-4044-ab90-f7e551ec7346.png',
+    '/lovable-uploads/5d54a823-f480-4c6e-93be-fec308e54686.png',
+    '/lovable-uploads/42ad349a-fcb0-4b0b-a2d7-46b0c60c1e6e.png',
+    '/lovable-uploads/e2c68ed5-b3dd-4c44-b76f-c7652d398c8c.png',
   ];
 
   return (
@@ -22,12 +22,12 @@ export const FeaturedWorkSection = () => {
           {portfolioPreviewImages.map((image, index) => (
             <div 
               key={index}
-              className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]"
+              className="relative w-full overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-[1.02]"
             >
               <img
                 src={image}
                 alt={`Portfolio preview ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           ))}

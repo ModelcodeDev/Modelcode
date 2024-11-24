@@ -26,7 +26,17 @@ export const translations = {
     },
     seeOurSessions: "See our sessions",
     followUs: "Follow us",
-    changeLanguage: "Click to change language"
+    changeLanguage: "Click to change language",
+    budgetSavings: "Budget Savings",
+    budgetSavingsDesc: "Save up to 70% compared to traditional photoshoots—freeing up resources for marketing, product development, or business growth.",
+    timeEfficiency: "Time Efficiency",
+    timeEfficiencyDesc: "No need to coordinate models, photographers, and locations. Get high-quality results faster, allowing you to launch products and campaigns sooner.",
+    highQualityResults: "High-Quality Results",
+    highQualityResultsDesc: "AI-powered photoshoots deliver stunning, realistic visuals that showcase your product in its best light.",
+    unlimitedCreativity: "Unlimited Creativity",
+    unlimitedCreativityDesc: "Choose any style, model type, or setting—from classic studio shots to futuristic digital designs. Your imagination sets the limits.",
+    competitiveEdge: "Competitive Edge",
+    competitiveEdgeDesc: "Stay ahead of the market by embracing innovative AI technology that allows your brand to stand out."
   },
   pl: {
     bringProductsToLife: "Ożyw swoje produkty",
@@ -55,6 +65,16 @@ export const translations = {
     },
     seeOurSessions: "Zobacz nasze sesje",
     followUs: "Obserwuj nas",
-    changeLanguage: "Kliknij, aby zmienić język"
+    changeLanguage: "Kliknij, aby zmienić język",
+    budgetSavings: "Oszczędność Budżetu",
+    budgetSavingsDesc: "Zaoszczędź do 70% w porównaniu z tradycyjnymi sesjami—uwolnij zasoby na marketing i rozwój.",
+    timeEfficiency: "Oszczędność Czasu",
+    timeEfficiencyDesc: "Uzyskaj wysokiej jakości rezultaty szybciej, bez koordynowania modeli, fotografów i lokalizacji.",
+    highQualityResults: "Wysokiej Jakości Rezultaty",
+    highQualityResultsDesc: "Sesje zdjęciowe AI dostarczają oszałamiające, realistyczne wizualizacje, które pokazują Twój produkt w najlepszym świetle.",
+    unlimitedCreativity: "Nieograniczona Kreatywność",
+    unlimitedCreativityDesc: "Wybierz dowolny styl, typ modelu lub otoczenie—od klasycznych ujęć studyjnych po futurystyczne projekty.",
+    competitiveEdge: "Przewaga Konkurencyjna",
+    competitiveEdgeDesc: "Wyprzedź rynek, wykorzystując innowacyjną technologię AI, która pozwala Twojej marce się wyróżnić."
   }
 };

@@ -7,16 +7,24 @@ export const WhyModelcodeSection = () => {
 
   const benefits = [
     {
-      title: t.adaptToMarket,
-      description: t.adaptToMarketDesc
+      title: t.budgetSavings,
+      description: t.budgetSavingsDesc
     },
     {
-      title: t.limitlessSessions,
-      description: t.limitlessSessionsDesc
+      title: t.timeEfficiency,
+      description: t.timeEfficiencyDesc
     },
     {
-      title: t.brandConcept,
-      description: t.brandConceptDesc
+      title: t.highQualityResults,
+      description: t.highQualityResultsDesc
+    },
+    {
+      title: t.unlimitedCreativity,
+      description: t.unlimitedCreativityDesc
+    },
+    {
+      title: t.competitiveEdge,
+      description: t.competitiveEdgeDesc
     }
   ];
 
