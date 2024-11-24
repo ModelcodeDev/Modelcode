@@ -13,7 +13,12 @@ const Portfolio = () => {
     '/lovable-uploads/dbe79a89-2cb0-4b96-8668-90847ea434ad.png',
     '/lovable-uploads/6e4e0b26-89b1-4fed-b559-55c1ecfbd97f.png',
     '/lovable-uploads/911efd21-132c-4c07-874c-8a9c355f3c23.png',
-    '/lovable-uploads/a9334f62-882a-4a5a-92c2-416143e4da4b.png'
+    '/lovable-uploads/a9334f62-882a-4a5a-92c2-416143e4da4b.png',
+    '/lovable-uploads/82d48da6-7d9c-4c79-ac36-e55dd47d8ecd.png',
+    '/lovable-uploads/95bfb61b-b4ce-43ca-b7b2-c75fadcbc74d.png',
+    '/lovable-uploads/4b2b116a-ffef-4a19-a585-3edd83e17d17.png',
+    '/lovable-uploads/bbe0b908-6035-4827-aef3-b7466585a4c6.png',
+    '/lovable-uploads/61dfb1cd-71f0-4ca4-91d5-9c19d752aea8.png'
   ];
 
   return (
