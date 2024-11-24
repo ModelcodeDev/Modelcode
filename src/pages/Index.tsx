@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PhotoshootCalculator from "@/components/PhotoshootCalculator";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -12,6 +12,7 @@ const Index = () => {
   const words = ["Products", "Outfits", "Looks", "Clothes"];
   const { language } = useLanguage();
   const t = translations[language];
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,6 +34,10 @@ const Index = () => {
   const scrollToSessions = () => {
     const sessionsSection = document.querySelector('#sessions-section');
     sessionsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSaveClick = () => {
+    navigate('/contact');
   };
 
   const portfolioPreviewImages = [
@@ -138,7 +143,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Why Modelcode? Section - Without Photo */}
+        {/* Why Modelcode? Section */}
         <section id="why-modelcode" className="py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center mb-16">{t.whyModelcode}</h2>
@@ -185,7 +190,21 @@ const Index = () => {
         </section>
 
         {/* Advanced Calculator Section */}
-        <PhotoshootCalculator id="calculator-section" className="bg-white" />
+        <section id="calculator-section" className="bg-white">
+          <div className="container py-20">
+            <h2 className="section-title text-center mb-16">{t.saveOnPhotoshoot}</h2>
+            <div className="text-center mb-8">
+              <Button 
+                size="lg" 
+                className="bg-black text-white hover:bg-gray-800"
+                onClick={handleSaveClick}
+              >
+                {t.saveOnPhotoshoot} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+            <PhotoshootCalculator />
+          </div>
+        </section>
       </div>
     </div>
   );

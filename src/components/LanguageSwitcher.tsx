@@ -1,19 +1,29 @@
-import { Switch } from "@/components/ui/switch";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Languages } from "lucide-react";
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center space-x-2">
-      <span className="text-sm text-white">EN</span>
-      <Switch
-        checked={language === 'pl'}
-        onCheckedChange={(checked) => setLanguage(checked ? 'pl' : 'en')}
-        className="data-[state=checked]:bg-white/20"
-      />
-      <span className="text-sm text-white">PL</span>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger className="focus:outline-none">
+        <Languages className="h-5 w-5 text-white" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setLanguage('en')}>
+          English
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage('pl')}>
+          Polski
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
