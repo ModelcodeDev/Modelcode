@@ -1,12 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations/translations";
+import { Button } from "@/components/ui/button";
 
 const Portfolio = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const portfolioImages = [
-    '/lovable-uploads/b861ca7f-8e35-43a6-9c34-28e7a0928398.png',
-    '/lovable-uploads/7a94c616-ae96-4056-8ded-052afef3b069.png',
-    '/lovable-uploads/082622d6-76ab-4044-ab90-f7e551ec7346.png',
-    '/lovable-uploads/c42a5aae-9c46-4945-a401-9ccb9dbe15c8.png',
-    '/lovable-uploads/6e8c4e8e-7588-4892-90f2-9595e47a7131.png'
+    '/lovable-uploads/7c0f567a-21de-4c4a-83bc-5d23877f9bab.png',
+    '/lovable-uploads/dbe79a89-2cb0-4b96-8668-90847ea434ad.png',
+    '/lovable-uploads/6e4e0b26-89b1-4fed-b559-55c1ecfbd97f.png',
+    '/lovable-uploads/911efd21-132c-4c07-874c-8a9c355f3c23.png',
+    '/lovable-uploads/a9334f62-882a-4a5a-92c2-416143e4da4b.png'
   ];
 
   return (
@@ -18,7 +25,7 @@ const Portfolio = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
         {portfolioImages.map((image, index) => (
           <div 
             key={index}
@@ -31,6 +38,19 @@ const Portfolio = () => {
             />
           </div>
         ))}
+      </div>
+
+      {/* CTA Section */}
+      <div className="text-center py-16 bg-black/5 rounded-2xl">
+        <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Brand?</h2>
+        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Let's create stunning visuals that capture your brand's essence and elevate your online presence.
+        </p>
+        <Link to="/contact">
+          <Button size="lg" className="text-lg px-8 py-6">
+            Contact Us Today
+          </Button>
+        </Link>
       </div>
     </div>
   );
