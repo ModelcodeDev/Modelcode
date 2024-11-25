@@ -53,15 +53,65 @@ export const translations = {
     privacy: {
       title: "Privacy Policy",
       lastUpdated: "Last updated",
+      lastUpdatedDate: "November 25, 2024",
       intro: "At ModelCode, we respect your privacy and are committed to protecting your personal data.",
-      dataWeCollect: "Information We Collect",
-      dataWeCollectDesc: "We collect information that you provide directly to us, including contact information and product images.",
-      howWeUse: "How We Use Your Information",
-      howWeUseDesc: "We use the collected information to provide services, communicate with you, and improve our offerings.",
-      contact: "Contact Us",
-      contactDesc: "If you have questions about this Privacy Policy, please contact us at:"
-    },
-    privacyPolicy: "Privacy Policy"
+      sections: {
+        dataCollection: {
+          title: "Information We Collect",
+          content: "We collect information you provide directly to us, including:",
+          items: [
+            "Account information (name, email)",
+            "Usage data (interactions with our platform)",
+            "Payment information when you make purchases"
+          ]
+        },
+        dataUsage: {
+          title: "How We Use Your Information",
+          content: "We use your information to:",
+          items: [
+            "Provide and improve our services",
+            "Process your transactions",
+            "Send you important updates",
+            "Analyze platform usage"
+          ]
+        },
+        security: {
+          title: "Data Storage and Security",
+          content: "Your data is stored securely using industry-standard encryption. We retain your information only as long as necessary to provide our services."
+        },
+        sharing: {
+          title: "Information Sharing",
+          content: "We do not sell your personal information. We share data only with:",
+          items: [
+            "Service providers who assist our operations",
+            "Law enforcement when legally required",
+            "Third parties with your explicit consent"
+          ]
+        },
+        rights: {
+          title: "Your Rights",
+          content: "You have the right to:",
+          items: [
+            "Access your personal data",
+            "Request corrections or deletion",
+            "Opt out of marketing communications",
+            "Export your data"
+          ]
+        },
+        cookies: {
+          title: "Cookies",
+          content: "We use cookies to enhance your browsing experience and analyze site usage. You can control cookie preferences through your browser settings."
+        },
+        changes: {
+          title: "Changes to This Policy",
+          content: "We may update this policy periodically. We will notify you of significant changes via email or site notification."
+        },
+        contact: {
+          title: "Contact Us",
+          content: "For privacy-related questions, contact us at info@modelcode.io"
+        }
+      }
+    }
   },
   pl: {
     bringProductsToLife: "Ożyw swoje produkty",
@@ -117,14 +167,64 @@ export const translations = {
     privacy: {
       title: "Polityka Prywatności",
       lastUpdated: "Ostatnia aktualizacja",
+      lastUpdatedDate: "25 listopada 2024",
       intro: "W ModelCode szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych.",
-      dataWeCollect: "Informacje, które zbieramy",
-      dataWeCollectDesc: "Zbieramy informacje, które przekazujesz nam bezpośrednio, w tym dane kontaktowe i zdjęcia produktów.",
-      howWeUse: "Jak wykorzystujemy Twoje informacje",
-      howWeUseDesc: "Wykorzystujemy zebrane informacje do świadczenia usług, komunikacji z Tobą i ulepszania naszej oferty.",
-      contact: "Kontakt",
-      contactDesc: "Jeśli masz pytania dotyczące Polityki Prywatności, skontaktuj się z nami:"
-    },
-    privacyPolicy: "Polityka Prywatności"
+      sections: {
+        dataCollection: {
+          title: "Zbierane Informacje",
+          content: "Zbieramy informacje, które przekazujesz nam bezpośrednio, w tym:",
+          items: [
+            "Informacje o koncie (imię, email)",
+            "Dane o użytkowaniu (interakcje z naszą platformą)",
+            "Informacje o płatnościach podczas dokonywania zakupów"
+          ]
+        },
+        dataUsage: {
+          title: "Jak Wykorzystujemy Twoje Informacje",
+          content: "Wykorzystujemy Twoje informacje do:",
+          items: [
+            "Świadczenia i ulepszania naszych usług",
+            "Przetwarzania Twoich transakcji",
+            "Wysyłania ważnych aktualizacji",
+            "Analizy użytkowania platformy"
+          ]
+        },
+        security: {
+          title: "Przechowywanie i Bezpieczeństwo Danych",
+          content: "Twoje dane są przechowywane bezpiecznie przy użyciu standardowego szyfrowania branżowego. Przechowujemy Twoje informacje tylko tak długo, jak jest to konieczne do świadczenia naszych usług."
+        },
+        sharing: {
+          title: "Udostępnianie Informacji",
+          content: "Nie sprzedajemy Twoich danych osobowych. Udostępniamy dane tylko:",
+          items: [
+            "Dostawcom usług, którzy wspierają nasze operacje",
+            "Organom ścigania, gdy jest to prawnie wymagane",
+            "Stronom trzecim za Twoją wyraźną zgodą"
+          ]
+        },
+        rights: {
+          title: "Twoje Prawa",
+          content: "Masz prawo do:",
+          items: [
+            "Dostępu do swoich danych osobowych",
+            "Żądania poprawek lub usunięcia",
+            "Rezygnacji z komunikacji marketingowej",
+            "Eksportu swoich danych"
+          ]
+        },
+        cookies: {
+          title: "Pliki Cookie",
+          content: "Używamy plików cookie, aby ulepszyć Twoje doświadczenia przeglądania i analizować użytkowanie witryny. Możesz kontrolować preferencje dotyczące plików cookie w ustawieniach przeglądarki."
+        },
+        changes: {
+          title: "Zmiany w Polityce",
+          content: "Możemy okresowo aktualizować tę politykę. Powiadomimy Cię o istotnych zmianach za pomocą wiadomości e-mail lub powiadomienia na stronie."
+        },
+        contact: {
+          title: "Kontakt",
+          content: "W przypadku pytań dotyczących prywatności, skontaktuj się z nami pod adresem info@modelcode.io"
+        }
+      }
+    }
   }
 };

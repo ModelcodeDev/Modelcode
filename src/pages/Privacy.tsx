@@ -7,25 +7,28 @@ const Privacy = () => {
   const t = translations[language].privacy;
 
   return (
-    <div className="container py-20 max-w-4xl">
+    <div className="container py-20 max-w-4xl mx-auto px-4">
       <h1 className="text-4xl font-bold mb-8">{t.title}</h1>
-      <div className="prose prose-lg">
-        <p className="mb-4">{t.lastUpdated}: {new Date().toLocaleDateString()}</p>
+      <div className="prose prose-lg max-w-none">
+        <p className="text-gray-600 mb-8">
+          {t.lastUpdated}: {t.lastUpdatedDate}
+        </p>
         
         <p className="mb-8">{t.intro}</p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">{t.dataWeCollect}</h2>
-        <p className="mb-4">{t.dataWeCollectDesc}</p>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4">{t.howWeUse}</h2>
-        <p className="mb-4">{t.howWeUseDesc}</p>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4">{t.contact}</h2>
-        <p className="mb-4">
-          {t.contactDesc}
-          <br />
-          Email: kordian@modelcode.io
-        </p>
+        {Object.entries(t.sections).map(([key, section]) => (
+          <div key={key} className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">{section.title}</h2>
+            <p className="mb-4">{section.content}</p>
+            {section.items && (
+              <ul className="list-disc pl-6 space-y-2">
+                {section.items.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
