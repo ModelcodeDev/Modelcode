@@ -19,9 +19,17 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen relative">
+      {/* Background color while loading */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundColor: "#bfa399"
+        }}
+      />
+      
       {/* Background image - Desktop */}
       <div 
-        className="absolute inset-0 z-0 hidden md:block"
+        className="absolute inset-0 z-1 hidden md:block"
         style={{
           backgroundImage: "url('/lovable-uploads/7add61ac-380a-4d84-82b0-b3c33fb0eccb.png')",
           backgroundSize: "cover",
@@ -31,7 +39,7 @@ export const HeroSection = () => {
       />
       {/* Background image - Mobile */}
       <div 
-        className="absolute inset-0 z-0 block md:hidden"
+        className="absolute inset-0 z-1 block md:hidden"
         style={{
           backgroundImage: "url('/lovable-uploads/470fd5ae-f8fb-4931-aeee-ff2aaa9d3e60.png')",
           backgroundSize: "cover",
